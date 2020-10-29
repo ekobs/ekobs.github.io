@@ -1,0 +1,22 @@
+{
+    "name": "Push Notifications FCM",
+    "short_name": "SISBOL",
+    "description": "Submission 2 - Dicoding",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#4a148c",
+    "theme_color": "#6a1b9a",
+    "icons": [
+        {
+            "src": "icon.png",
+            "sizes": "512x512",
+            "type": "image/png",
+			"purpose": "any maskable"
+        }
+    ],
+    
+    "gcm_sender_id": "775171837077"
+}
+
+
+
