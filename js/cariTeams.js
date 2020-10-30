@@ -16,7 +16,8 @@ function cariTeams(item,idParam,loader) {
 		teams.forEach(teams => { 
 			if(cari===teams.id){
 				temu="y";
-				pesan();
+				M.toast({html: 'Data Sudah Ada'});
+				//pesan();
 				loader.style.display = 'none';
 			} else {
 				temu="t";

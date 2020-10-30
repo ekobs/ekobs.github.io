@@ -43,7 +43,7 @@ function getTeams() {
 					  <div class="card">
 						<a href="./article.html?id=${teams.id}">
 						  <div class="card-image waves-effect waves-block waves-light">
-							<img src="${teams.crestUrl}" />
+							<img src="${teams.crestUrl}" onerror="this.onerror=null;this.src='./broken.png'"/>
 						  </div>
 						</a>
 						<div class="card-content">
@@ -80,7 +80,7 @@ function getTeams() {
               <div class="card">
                 <a href="./article.html?id=${teams.id}">
                   <div class="card-image waves-effect waves-block waves-light">
-                    <img src="${teams.crestUrl}" />
+                    <img src="${teams.crestUrl}" onerror="this.onerror=null;this.src='./broken.png'"/>
                   </div>
                 </a>
                 <div class="card-content">
@@ -118,7 +118,7 @@ function getTeamsById() {
 			  var articleHTML = `
 				<div class="card">
 				  <div class="card-image waves-effect waves-block waves-light">
-					<img src="${data.crestUrl}" />
+					<img src="${data.crestUrl}" onerror="this.onerror=null;this.src='./broken.png'"/>
 				  </div>
 				  <div class="card-content">
 					<span class="card-title truncate">${data.name}</span>
@@ -152,7 +152,7 @@ function getTeamsById() {
 		  var articleHTML = `
 			  <div class="card">
 				<div class="card-image waves-effect waves-block waves-light">
-				  <img src="${data.crestUrl}" />
+				  <img src="${data.crestUrl}" onerror="this.onerror=null;this.src='./broken.png'"/>
 				</div>
 				<div class="card-content">
 					<span class="card-title truncate">${data.name}</span>
@@ -178,7 +178,9 @@ function getTeamsById() {
 function getSavedTeams() {
   getAll().then(function(teams) {
 	if(teams.length===0){
-		var pesanHTML="";
+		M.toast({html: 'Data Kosong'});
+		document.getElementById("body-content").innerHTML ="";
+		/*var pesanHTML="";
 		pesanHTML=`
 				<div class="card">
 					<div class="center-align">
@@ -187,7 +189,7 @@ function getSavedTeams() {
 					</div>
 				</div>
 		`;
-		document.getElementById("body-content").innerHTML = pesanHTML;
+		document.getElementById("body-content").innerHTML = pesanHTML;*/
 	} else {
     // Menyusun komponen card artikel secara dinamis
     var articlesHTML = "";
@@ -197,7 +199,7 @@ function getSavedTeams() {
                   <div class="card">
                     <a href="./article.html?id=${teams.id}&saved=true">
                       <div class="card-image waves-effect waves-block waves-light">
-                        <img src="${teams.crestUrl}" />
+                        <img src="${teams.crestUrl}" onerror="this.onerror=null;this.src='./broken.png'"/>
                       </div>
                     </a>
                     <div class="card-content">
@@ -244,7 +246,7 @@ function getSavedTeamsById() {
     var articleHTML = `
     <div class="card">
       <div class="card-image waves-effect waves-block waves-light">
-        <img src="${teams.crestUrl}" />
+        <img src="${teams.crestUrl}" onerror="this.onerror=null;this.src='./broken.png'"/>
       </div>
       <div class="card-content">
         <span class="card-title truncate">${teams.name}</span>
@@ -277,7 +279,9 @@ function getDelTeams() {
   getAll().then(function(teams) {
 	
 	if(teams.length===0){
-		var pesanHTML="";
+		M.toast({html: 'Data Kosong'});
+		document.getElementById("body-content").innerHTML ="";
+		/*var pesanHTML="";
 		pesanHTML=`
 				<div class="card">
 					<div class="center-align">
@@ -286,7 +290,7 @@ function getDelTeams() {
 					</div>
 				</div>
 		`;
-		document.getElementById("body-content").innerHTML = pesanHTML;
+		document.getElementById("body-content").innerHTML = pesanHTML;*/
 	} else{
     console.log(teams);
     // Menyusun komponen card artikel secara dinamis
@@ -297,7 +301,7 @@ function getDelTeams() {
                   <div class="card">
                     <a href="./articleDel.html?id=${teams.id}&delete=true">
                       <div class="card-image waves-effect waves-block waves-light">
-                        <img src="${teams.crestUrl}" />
+                        <img src="${teams.crestUrl}" onerror="this.onerror=null;this.src='./broken.png'"/>
                       </div>
                     </a>
                     <div class="card-content">

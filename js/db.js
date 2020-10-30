@@ -15,7 +15,8 @@ function saveForLater(article) {
       return tx.complete;
     })
     .then(function() {
-      console.log("Artikel berhasil di simpan.");
+      M.toast({html: 'Data Berhasil Disimpan'});
+	  //console.log("Artikel berhasil di simpan.");
     });
 }
 
@@ -57,7 +58,8 @@ function delById(id) {
         return store.delete(id);
       })
       .then(function(teams) {
-	    console.log("berhasil dihapus");
+		M.toast({html: 'Data Berhasil Dihapus'});
+	    //console.log("berhasil dihapus");
         resolve(teams);
       });
   });
